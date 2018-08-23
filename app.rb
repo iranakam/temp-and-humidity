@@ -1,6 +1,6 @@
 require 'sinatra/base'
 require 'sinatra/namespace'
-require "sinatra/json"
+require 'sinatra/json'
 require './lib/dht/sensor'
 
 class Application < Sinatra::Base
@@ -22,5 +22,4 @@ class Application < Sinatra::Base
   def temp_humidity
     { temperature: DHT::Sensor.temperature_value.floor(1), humidity: DHT::Sensor.humidity_value.floor(1) }
   end
-
 end
